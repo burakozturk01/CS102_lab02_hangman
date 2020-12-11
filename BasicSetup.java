@@ -1,7 +1,7 @@
-//import cs102.IHangmanSetup;
+
 
 // BasicSetup
-// David, 2013/4/7
+// David
 
 public class BasicSetup implements IHangmanSetup
 {

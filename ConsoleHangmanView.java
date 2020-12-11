@@ -1,33 +1,21 @@
-/**
- * @(#)ConsoleHangmanView.java
- *
- *
- * @author
- * @version 1.00 2020/12/3
- */
 
+import javax.swing.JPanel;
 
-public class ConsoleHangmanView implements IHangmanView {
+// ConsoleHangmanView
+// David, 6/4/2013
 
-    public ConsoleHangmanView() {}
+public class ConsoleHangmanView extends JPanel implements IHangmanView
+{
+	@Override
+	public void updateView( Hangman hangman)
+	{
+		System.out.println( "[" + hangman.getNumOfIncorrectTries() + "] "
+								+ hangman.getKnownSoFar() );
 
-    public void updateView( Hangman hangman) {
-    	if (!hangman.isGameOver())
-    	{
-			System.out.println( "\nUsed letters: " + hangman.getUsedLetters() );
-			System.out.println( "Known letters: " + hangman.getKnownSoFar() );
-			System.out.println( "Remaining tries: " + (hangman.getMaxAllowedIncorrectTries() -  hangman.getNumOfIncorrectTries()) + "\n");
-    	}
-
-    	else
-    	{
-    		if ( hangman.hasLost() )
-	    		System.out.println( "You lost" );
-
-	    	else
-	    		System.out.println( "You won" );
-    	}
-    }
-
-
+		if ( hangman.isGameOver() )
+			if ( hangman.hasLost() )
+				System.out.println( "Sorry, you lost!");
+			else
+				System.out.println( "Congratulations, you won.");
+	}
 }

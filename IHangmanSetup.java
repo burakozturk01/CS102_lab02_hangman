@@ -1,11 +1,8 @@
-/**
- * @(#)IHangmanSetup.java
- *
- *
- * @author
- * @version 1.00 2020/12/3
- */
 
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
 
 public interface IHangmanSetup {
     String version = "v1.0";
